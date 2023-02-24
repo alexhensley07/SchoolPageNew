@@ -1,0 +1,27 @@
+﻿@page
+@model SchoolPage.Pages.Interface.InstructorLoginModel
+@{
+}
+
+<form asp-page="InstructorLogin">
+    <input asp-for="Username" placeholder="Username" />
+    <br />
+    <label> Enter Password: </label>
+    <input asp-for="Password" class="form-control" type="password" />
+    <br />
+    <input type="submit" class="btn btn-primary" value="Login" />
+</form>
+@{
+    if (HttpContext.Session.GetString("username") != null)
+    {
+        <p class="text-success">@ViewData["LoginMessage"]</p>
+    }
+    else
+    {
+        <p class="text-danger">@ViewData["LoginMessage"]</p>
+    }
+}
+
+<h5>Create Account will take you to the Instructor Page</h5>
+<p><a href="/Interface/InstructorPage/"> </p>
+<button> Create Account </button> </a>
